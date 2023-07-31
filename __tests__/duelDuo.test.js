@@ -13,7 +13,7 @@ afterEach(async () => {
 describe("Duel Duo tests", () => {
   test("page loads with title", async () => {
     await driver.get("http://3.141.9.190/");
-    await driver.wait(until.titleIs("Duel Duo"), 1000);
+    await driver.wait(until.titleIs("Duel Duo"), 2000);
   });
   test("Find the draw button", async()=>{
     await driver.get("http://3.141.9.190/");

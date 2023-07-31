@@ -11,6 +11,7 @@ const playerRecord = {
 const app = express();
 
 app.use(express.static(`public`))
+
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
   accessToken: '7195f10d7e084036a0f592172e697121',
@@ -76,7 +77,7 @@ app.get("/api/robots/shuffled", (req, res) => {
 app.post("/api/duel", (req, res) => {
   try {
     const { compDuo, playerDuo } = req.body;
-
+    rollbar.info('A duel has been started')
     const { compHealth, playerHealth } = calculateHealthAfterAttack({
       compDuo,
       playerDuo,
